@@ -1,3 +1,4 @@
+import 'package:bus_booking/view/driver_list.dart';
 import 'package:bus_booking/view/home.dart';
 import 'package:bus_booking/view/login.dart';
 import 'package:bus_booking/view/onboarding.dart';
@@ -30,6 +31,9 @@ class MyApp extends StatelessWidget {
           transition: Transition.cupertino
           ),
           GetPage(name: '/home', page: ()=> const HomePage(),
+          transition: Transition.cupertino
+          ),
+          GetPage(name: '/driver_list', page: ()=> const DriverList(),
           transition: Transition.cupertino
           ),
         ],
