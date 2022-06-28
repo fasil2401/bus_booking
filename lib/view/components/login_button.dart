@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:sizer/sizer.dart';
 
+import '../../controller/login_controller.dart';
 import '../constants/colors.dart';
 
 
@@ -22,7 +23,8 @@ class LoginButton extends StatelessWidget {
      })
       : super(key: key);
 
-  // final registerApiControl = Get.put(RegisterOtpController());
+  
+  final loginController = Get.put(LoginController());
   @override
   Widget build(BuildContext context) {
     return Padding(
@@ -44,7 +46,9 @@ class LoginButton extends StatelessWidget {
                 Get.toNamed('/login');               
               }
               else if(callback== 'login'){
-                Get.toNamed('/home');               
+                // Get.toNamed('/home');  
+                
+                loginController.getLogin() ;          
               }
               else if(callback== 'add'){
                 Get.toNamed('/add_driver');               

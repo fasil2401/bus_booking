@@ -30,7 +30,7 @@ class MyApp extends StatelessWidget {
           GetPage(name: '/', page: ()=> const OnboardingScreen(),
           transition: Transition.cupertino
           ),
-          GetPage(name: '/login', page: ()=> const LoginScreen(),
+          GetPage(name: '/login', page: ()=>  LoginScreen(),
           transition: Transition.cupertino
           ),
           GetPage(name: '/home', page: ()=> const HomePage(),

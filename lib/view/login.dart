@@ -7,12 +7,17 @@ import 'package:flutter/material.dart';
 import 'package:bus_booking/view/components/login_button.dart';
 import 'package:bus_booking/view/constants/paddings.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:sizer/sizer.dart';
 
+import '../controller/login_controller.dart';
 import 'constants/colors.dart';
 
 class LoginScreen extends StatelessWidget {
-  const LoginScreen({Key? key}) : super(key: key);
+   LoginScreen({Key? key}) : super(key: key);
+
+
+  
 
   @override
   Widget build(BuildContext context) {
