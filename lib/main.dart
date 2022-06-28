@@ -1,4 +1,5 @@
 import 'package:bus_booking/view/add_driver.dart';
+import 'package:bus_booking/view/bus_1x3.dart';
 import 'package:bus_booking/view/bus_2x2.dart';
 import 'package:bus_booking/view/driver_list.dart';
 import 'package:bus_booking/view/home.dart';
@@ -42,6 +43,9 @@ class MyApp extends StatelessWidget {
           transition: Transition.cupertino
           ),
           GetPage(name: '/bus2x2', page: ()=> const Bus2x2Screen(),
+          transition: Transition.cupertino
+          ),
+          GetPage(name: '/bus1x3', page: ()=> const Bus1x3Screen(),
           transition: Transition.cupertino
           ),
         ],

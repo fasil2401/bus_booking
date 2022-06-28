@@ -12,7 +12,7 @@ class BusTile extends StatelessWidget {
   Widget build(BuildContext context) {
     return InkWell(
       onTap: () {
-        Get.toNamed('/bus2x2');
+        Get.toNamed('/bus1x3');
       },
       child: Card(
         child: ListTile(
