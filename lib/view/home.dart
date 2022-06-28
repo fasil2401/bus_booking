@@ -6,12 +6,13 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:sizer/sizer.dart';
 
+import '../controller/bus_list_controller.dart';
 import 'components/bus_tile.dart';
 import 'components/home_tile.dart';
 
 class HomePage extends StatelessWidget {
-  const HomePage({Key? key}) : super(key: key);
-
+   HomePage({Key? key}) : super(key: key);
+final buslistController = Get.put(BusListController());
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -50,15 +51,20 @@ class HomePage extends StatelessWidget {
             commonHeight1,
             Expanded(
               // height: 200.h,
-              child: ListView.separated(
-                  shrinkWrap: true,
-                  physics:const BouncingScrollPhysics(),
-                  scrollDirection: Axis.vertical,
-                  itemBuilder: (context, index) {
-                    return const BusTile();
-                  },
-                  separatorBuilder: (context, index) => commonHeight1,
-                  itemCount: 20),
+              child: GetBuilder<BusListController>(
+                builder: (cont) {
+
+                  return ListView.separated(
+                      shrinkWrap: true,
+                      physics:const BouncingScrollPhysics(),
+                      scrollDirection: Axis.vertical,
+                      itemBuilder: (context, index) {
+                        return  BusTile(busListElement: cont.busList[index],);
+                      },
+                      separatorBuilder: (context, index) => commonHeight1,
+                      itemCount: cont.busList.length);
+                }
+              ),
             )
           ],
         ),

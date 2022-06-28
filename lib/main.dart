@@ -33,7 +33,7 @@ class MyApp extends StatelessWidget {
           GetPage(name: '/login', page: ()=>  LoginScreen(),
           transition: Transition.cupertino
           ),
-          GetPage(name: '/home', page: ()=> const HomePage(),
+          GetPage(name: '/home', page: ()=>  HomePage(),
           transition: Transition.cupertino
           ),
           GetPage(name: '/driver_list', page: ()=> const DriverList(),

@@ -1,3 +1,4 @@
+import 'package:bus_booking/model/Bus%20List%20model/bus_list_model.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:sizer/sizer.dart';
@@ -5,53 +6,57 @@ import 'package:sizer/sizer.dart';
 
 class BusTile extends StatelessWidget {
   const BusTile({
-    Key? key,
+    Key? key, required this.busListElement
   }) : super(key: key);
 
+final BusListElement busListElement;
   @override
   Widget build(BuildContext context) {
-    return InkWell(
-      onTap: () {
-        Get.toNamed('/bus1x3');
-      },
-      child: Card(
-        child: ListTile(
-          leading: Container(
-            width: 20.w,
-            height: 20.w,
-            decoration: BoxDecoration(
-              borderRadius: BorderRadius.circular(8),
-              image: DecorationImage(
-                image: AssetImage('asset/images/bus.png'),
-                fit: BoxFit.contain,
-              ),
+    return Card(
+      child: ListTile(
+        leading: Container(
+          width: 20.w,
+          height: 20.w,
+          decoration: BoxDecoration(
+            borderRadius: BorderRadius.circular(8),
+            image: DecorationImage(
+              image: AssetImage('asset/images/bus.png'),
+              fit: BoxFit.contain,
             ),
           ),
-          title: Text(
-            'KSRC',
-            style: TextStyle(
-              fontSize: 16.sp,
-              fontWeight: FontWeight.w500,
-              fontFamily: 'Rubik',
-            ),
-          ),
-          subtitle: Text(
-            'Swift SCania P-series',
-            style: TextStyle(
-              fontSize: 12.sp,
-              fontWeight: FontWeight.w500,
-              fontFamily: 'Rubik',
-            ),
-          ),
-          trailing: ElevatedButton(
-              onPressed: () {},
-              child: Text(
-                'Manage',
-                style: TextStyle(
-                    fontFamily: 'Rubik',
-                    fontWeight: FontWeight.w400),
-              )),
         ),
+        title: Text(
+          'KSRTC',
+          style: TextStyle(
+            fontSize: 16.sp,
+            fontWeight: FontWeight.w500,
+            fontFamily: 'Rubik',
+          ),
+        ),
+        subtitle: Text(
+          busListElement.name,
+          style: TextStyle(
+            fontSize: 12.sp,
+            fontWeight: FontWeight.w500,
+            fontFamily: 'Rubik',
+          ),
+        ),
+        trailing: ElevatedButton(
+            onPressed: () {
+              if(busListElement.type == '1X3'){
+                Get.toNamed('/bus1x3');
+
+              }
+              else{
+                Get.toNamed('/bus2x2');
+              }
+            },
+            child:const Text(
+              'Manage',
+              style: TextStyle(
+                  fontFamily: 'Rubik',
+                  fontWeight: FontWeight.w400),
+            )),
       ),
     );
   }
