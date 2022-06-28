@@ -1,3 +1,4 @@
+import 'package:bus_booking/view/home.dart';
 import 'package:bus_booking/view/login.dart';
 import 'package:bus_booking/view/onboarding.dart';
 import 'package:flutter/material.dart';
@@ -26,6 +27,9 @@ class MyApp extends StatelessWidget {
           transition: Transition.cupertino
           ),
           GetPage(name: '/login', page: ()=> const LoginScreen(),
+          transition: Transition.cupertino
+          ),
+          GetPage(name: '/home', page: ()=> const HomePage(),
           transition: Transition.cupertino
           ),
         ],

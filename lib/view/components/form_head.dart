@@ -4,10 +4,10 @@ import 'package:sizer/sizer.dart';
 
 import '../constants/colors.dart';
 
-class form_head extends StatelessWidget {
+class FormHead extends StatelessWidget {
 
   final String title;
-  const form_head({
+  const FormHead({
     Key? key, required this.title,
   }) : super(key: key);
 
@@ -15,9 +15,9 @@ class form_head extends StatelessWidget {
   Widget build(BuildContext context) {
     return Text(title,
     style: TextStyle(
-      fontSize: 10.sp,
+      fontSize: 12.sp,
       fontWeight: FontWeight.bold,
-      color: redColor
+      color: Colors.grey
     ),
     );
   }

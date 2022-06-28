@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 
 const Color splashBackColor = Color(0xFF02081D);
 const Color redColor = Color(0xFFFC153B);
-const Color commonBlack = Color(0xFF000000);
+const Color commonBlack = Color(0xFF2B2B2B);
 const Color commonScaffoldBack = Color(0xFFE7E7E7);
 const Color welcomeSub = Color(0xFF5A5A5A);
  Color textFieldColor = Color(0xFF2A2A2A).withOpacity(0.1);
