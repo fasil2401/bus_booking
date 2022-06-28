@@ -1,3 +1,4 @@
+import 'package:bus_booking/view/add_driver.dart';
 import 'package:bus_booking/view/driver_list.dart';
 import 'package:bus_booking/view/home.dart';
 import 'package:bus_booking/view/login.dart';
@@ -34,6 +35,9 @@ class MyApp extends StatelessWidget {
           transition: Transition.cupertino
           ),
           GetPage(name: '/driver_list', page: ()=> const DriverList(),
+          transition: Transition.cupertino
+          ),
+          GetPage(name: '/add_driver', page: ()=> const AddDriver(),
           transition: Transition.cupertino
           ),
         ],

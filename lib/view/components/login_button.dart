@@ -41,10 +41,13 @@ class LoginButton extends StatelessWidget {
             ),
             onPressed: () {
               if(callback== 'onboard'){
-                Get.toNamed('login');               
+                Get.toNamed('/login');               
               }
               else if(callback== 'login'){
-                Get.toNamed('home');               
+                Get.toNamed('/home');               
+              }
+              else if(callback== 'add'){
+                Get.toNamed('/add_driver');               
               }
             
             },
