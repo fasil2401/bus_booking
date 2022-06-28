@@ -15,9 +15,9 @@ class WelcomeText extends StatelessWidget {
     return Text(title,
     style: TextStyle(
       color: color,
-      fontSize: 30.sp,
+      fontSize: 38.sp,
       fontFamily: 'Rubik',
-      fontWeight: FontWeight.w700
+      fontWeight: FontWeight.w600
     ),
     );
   }

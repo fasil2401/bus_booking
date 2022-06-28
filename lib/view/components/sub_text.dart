@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
+import 'package:sizer/sizer.dart';
 
 class subText extends StatelessWidget {
   subText({Key? key, required this.text, this.color, this.fontWeight})
@@ -14,8 +15,9 @@ class subText extends StatelessWidget {
     return Text(
       text,
       style: TextStyle(
-        fontSize: 12,
+        fontSize: 15.sp,
         fontWeight: fontWeight,
+        fontFamily: 'Rubik',
         color: color,
       ),
     );
