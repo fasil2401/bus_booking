@@ -3,6 +3,9 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:sizer/sizer.dart';
 
+import '../bus_1x3.dart';
+import '../bus_2x2.dart';
+
 
 class BusTile extends StatelessWidget {
   const BusTile({
@@ -44,11 +47,13 @@ final BusListElement busListElement;
         trailing: ElevatedButton(
             onPressed: () {
               if(busListElement.type == '1X3'){
-                Get.toNamed('/bus1x3');
+                // Get.toNamed('/bus1x3');
+                Get.to(()=>Bus1x3Screen( title: busListElement.name, id: busListElement.driver ?? 0, seatCount: (int.parse( busListElement.seatCount) / 4 ).round(),));
 
               }
               else{
-                Get.toNamed('/bus2x2');
+                // Get.toNamed('/bus2x2');
+                Get.to(()=>Bus2x2Screen( title: busListElement.name, id: busListElement.driver ?? 0, seatCount: (int.parse( busListElement.seatCount) / 4 ).round(),));
               }
             },
             child:const Text(

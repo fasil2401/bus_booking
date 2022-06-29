@@ -2,29 +2,31 @@ import 'package:bus_booking/services/bus_list.dart';
 import 'package:get/get.dart';
 
 import '../model/Bus List model/bus_list_model.dart';
+import '../model/driver list model/driver_list_model.dart';
+import '../services/drivet_list.dart';
 import '../services/login_services.dart';
 
-class BusListController extends GetxController {
+class DriverListController extends GetxController {
   var isLoading = true.obs;
   var message = ''.obs;
 
   var status = false.obs;
-  var busList = <BusListElement>[].obs;
+  var driverList = <DriverListElement>[].obs;
   @override
   void onInit() {
     // TODO: implement onInit
-    getBusList();
+    getDriverList();
 
     super.onInit();
   }
 
-  void getBusList() async {
+  void getDriverList() async {
     try {
       isLoading(true);
-      var feedback = await RemoteServicesBusList().getBusList();
+      var feedback = await RemoteServicesDriverList().getDriverList();
       if (feedback != null) {
         // message.value = feedback.message;
-        busList.value = feedback.busList;
+        driverList.value = feedback.driverList;
         status.value = feedback.status;
         update();
       } else {

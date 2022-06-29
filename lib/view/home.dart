@@ -53,7 +53,7 @@ final buslistController = Get.put(BusListController());
               // height: 200.h,
               child: GetBuilder<BusListController>(
                 builder: (cont) {
-
+                  print(cont.busList.length);
                   return ListView.separated(
                       shrinkWrap: true,
                       physics:const BouncingScrollPhysics(),
