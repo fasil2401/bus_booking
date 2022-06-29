@@ -19,6 +19,7 @@ final int? seatCount;
 
   @override
   Widget build(BuildContext context) {
+    driverListController.getDriverList();
 
     if (id != 0) {
       driverListController.driverList.value.forEach((element) {

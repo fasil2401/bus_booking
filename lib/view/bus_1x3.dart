@@ -15,10 +15,10 @@ final driverListController = Get.put(DriverListController());
 final String title ;
 final int? id;
 final int? seatCount;
- DriverListElement driverListElement = DriverListElement(id: 0, name:" Please Update Driver", licenseNo: '');
+ DriverListElement driverListElement = DriverListElement(id: 0, name:"", licenseNo: '');
   @override
   Widget build(BuildContext context) {
-
+driverListController.getDriverList();
        if (id != 0) {
       driverListController.driverList.value.forEach((element) {
       if (element.id == id) {

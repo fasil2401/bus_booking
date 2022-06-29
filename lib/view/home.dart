@@ -47,7 +47,7 @@ final buslistController = Get.put(BusListController());
               ),
             ),
             commonHeight2,
-           const FormHead(title: '21 Buses Found'),
+            FormHead(title: '${buslistController.busList.length} Buses Found'),
             commonHeight1,
             Expanded(
               // height: 200.h,

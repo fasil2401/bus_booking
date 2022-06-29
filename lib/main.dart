@@ -36,10 +36,10 @@ class MyApp extends StatelessWidget {
           GetPage(name: '/home', page: ()=>  HomePage(),
           transition: Transition.cupertino
           ),
-          GetPage(name: '/driver_list', page: ()=> const DriverList(),
+          GetPage(name: '/driver_list', page: ()=>  DriverList(),
           transition: Transition.cupertino
           ),
-          GetPage(name: '/add_driver', page: ()=> const AddDriver(),
+          GetPage(name: '/add_driver', page: ()=>  AddDriver(),
           transition: Transition.cupertino
           ),
           GetPage(name: '/bus2x2', page: ()=>  Bus2x2Screen(),

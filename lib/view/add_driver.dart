@@ -1,7 +1,9 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:sizer/sizer.dart';
 
+import '../controller/add_driver_controller.dart';
 import 'components/form_head.dart';
 import 'components/login_button.dart';
 import 'constants/colors.dart';
@@ -10,7 +12,9 @@ import 'constants/paddings.dart';
 
 
 class AddDriver extends StatelessWidget {
-  const AddDriver({Key? key}) : super(key: key);
+   AddDriver({Key? key}) : super(key: key);
+
+  final addController = Get.put(AddController());
 
   @override
   Widget build(BuildContext context) {
@@ -18,6 +22,7 @@ class AddDriver extends StatelessWidget {
 
        appBar: AppBar(
         backgroundColor: commonBlack,
+        
         title: Text(
           'Add Driver',
           style: TextStyle(fontFamily: 'Rubik'),
@@ -36,7 +41,10 @@ class AddDriver extends StatelessWidget {
                   height: 5.h,
                 ),
                 CupertinoTextField(
-                  onChanged: (value) {},
+                  onChanged: (value) {
+                    addController.validateName(value);
+                  
+                  },
                   decoration: BoxDecoration(
                     color: textFieldColor,
                     borderRadius: BorderRadius.circular(8),
@@ -52,11 +60,16 @@ class AddDriver extends StatelessWidget {
                 ),
                 commonHeight2,
                 CupertinoTextField(
-                  onChanged: (value) {},
+                  onChanged: (value) {
+                    addController.validateLicense(value);
+                    print(value);
+                  
+                  },
                   decoration: BoxDecoration(
                     color: textFieldColor,
                     borderRadius: BorderRadius.circular(8),
                   ),
+                  
                   style: TextStyle(fontSize: 16.sp),
                   placeholder: 'Enter License Numeber',
                   placeholderStyle: TextStyle(
